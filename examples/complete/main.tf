@@ -1,9 +1,14 @@
+variable "profile" {
+  default = "default"
+}
+
 variable "region" {
   default = "cn-beijing"
 }
 
 provider "alicloud" {
-  region = var.region
+  region  = var.region
+  profile = var.profile
 }
 
 #############################################################
@@ -29,6 +34,7 @@ data "alicloud_instance_types" "this" {
 module "security_group" {
   source              = "alibaba/security-group/alicloud"
   region              = var.region
+  profile             = var.profile
   vpc_id              = data.alicloud_vpcs.default.ids.0
   name                = "tensorflow-1"
   ingress_cidr_blocks = ["0.0.0.0/0"]
@@ -37,6 +43,8 @@ module "security_group" {
 
 module "market-tensorflow" {
   source                     = "../.."
+  region                     = var.region
+  profile                    = var.profile
   ecs_instance_name          = "tensorflow-instance"
   ecs_instance_password      = "YourPassword123"
   ecs_instance_type          = data.alicloud_instance_types.this.ids.0
