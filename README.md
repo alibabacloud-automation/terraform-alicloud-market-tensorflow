@@ -8,7 +8,7 @@ Terraform Module used to create ECS Instance based on Alibaba Cloud market place
 
 ## Terraform versions
 
-This module requires Terraform 0.12 and Terraform Provider AliCloud 1.72.0+.
+This module requires Terraform 0.12 and Terraform Provider AliCloud 1.71.0+.
 
 ## Usage
 
@@ -18,6 +18,7 @@ Building the Tensorflow using market place image
 module "market-tensorflow" {
   source                     = "terraform-alicloud-modules/market-tensorflow/alicloud"
   region                     = "cn-beijing"
+  profile                    = "Your-Profile-Name"
 
   product_keyword            = "深度学习框架"
   product_suggested_price    = 0

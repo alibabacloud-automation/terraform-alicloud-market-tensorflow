@@ -5,7 +5,7 @@ terraform-alicloud-market-tensorflow
 
 ## Terraform 版本
 
-本模板要求使用版本 Terraform 0.12 和 阿里云 Provider 1.72.0+。
+本模板要求使用版本 Terraform 0.12 和 阿里云 Provider 1.71.0+。
 
 ## 用法
 
@@ -15,6 +15,7 @@ terraform-alicloud-market-tensorflow
 module "market-tensorflow" {
   source                     = "terraform-alicloud-modules/market-tensorflow/alicloud"
   region                     = "cn-beijing"
+  profile                    = "Your-Profile-Name"
 
   product_keyword            = "深度学习框架"
   product_suggested_price    = 0
