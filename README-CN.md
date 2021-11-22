@@ -36,7 +36,7 @@ module "market-tensorflow" {
 * [Tensorflow 完整示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-market-tensorflow/tree/master/examples/complete)
 
 ## 注意事项
-本Module从版本v1.1.1开始已经移除掉如下的 provider 的显示设置：
+本Module从版本v1.1.0开始已经移除掉如下的 provider 的显示设置：
 
 ```hcl
 provider "alicloud" {
@@ -62,7 +62,7 @@ module "market-tensorflow" {
 }
 ```
 
-如果你想对正在使用中的Module升级到 1.1.1 或者更高的版本，那么你可以在模板中显示定义一个系统过Region的provider：
+如果你想对正在使用中的Module升级到 1.1.0 或者更高的版本，那么你可以在模板中显示定义一个系统过Region的provider：
 ```hcl
 provider "alicloud" {
   region  = "cn-beijing"
@@ -113,7 +113,7 @@ module "market-tensorflow" {
 
 作者
 -------
-Created and maintained by Li Xue(lixue_9250@163.com) and He Guimin(@xiaozhu36, heguimin36@163.com)
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
 
 许可
 ----
