@@ -2,18 +2,17 @@ data "alicloud_regions" "this" {
   current = true
 }
 
-data "alicloud_market_products" "products"{
+data "alicloud_market_products" "products" {
   search_term           = var.product_keyword
   supplier_name_keyword = var.product_supplier_name_keyword
   suggested_price       = var.product_suggested_price
   product_type          = "MIRROR"
 }
 
-data "alicloud_market_product" "product"{
+data "alicloud_market_product" "product" {
   product_code     = data.alicloud_market_products.products.products.0.code
   available_region = data.alicloud_regions.this.ids.0
 }
-
 
 resource "alicloud_instance" "this" {
   count           = var.create_instance ? 1 : 0
@@ -32,11 +31,11 @@ resource "alicloud_instance" "this" {
 
   internet_charge_type       = var.internet_charge_type
   internet_max_bandwidth_out = var.internet_max_bandwidth_out
-  description                = "An ECS instance used to deploy Tensorflow."
+  description                = var.description
 
   resource_group_id   = var.resource_group_id
   deletion_protection = var.deletion_protection
-  force_delete        = true
+  force_delete        = var.force_delete
   tags = merge(
     {
       Created     = "Terraform"
