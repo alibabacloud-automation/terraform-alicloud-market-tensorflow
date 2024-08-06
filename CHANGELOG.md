@@ -1,4 +1,7 @@
-## 1.2.0 (Unreleased)
+## 1.2.0 (August 06, 2024)
+
+- deprecate [GH-7](https://github.com/alibabacloud-automation/terraform-alicloud-market-tensorflow/pull/7)
+
 ## 1.1.0 (December 5, 2021)
 
 ENHANCEMENTS:
